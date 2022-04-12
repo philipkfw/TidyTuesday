@@ -42,7 +42,7 @@ library(knitr)
 
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
                       message = FALSE, echo = TRUE, dpi = 180,
-                      fig.width = 8, out.height = 5)
+                      fig.width = 7, fig.height = 5)
 
 breed_traits <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_traits.csv')
 breed_rank_all <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_rank.csv')
@@ -201,7 +201,7 @@ melt_df %>%
   labs(x = "Breed Traits", y = "Total Score Across Top 5 Breeds")
 ```
 
-<img src="C:\Users\philwong\Documents\Analytics Training\R\TidyTuesday\Output\TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-7-1.png" height="5" />
+![](C:\Users\philwong\Documents\Analytics%20Training\R\TidyTuesday\Output\TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ##### 4.2 - Any particular correlation that help potential dog owners select their breeds?
 
@@ -219,4 +219,4 @@ ggcorrplot(corr,
            colors = c("red", "grey", "royal blue"))
 ```
 
-<img src="C:\Users\philwong\Documents\Analytics Training\R\TidyTuesday\Output\TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-8-1.png" height="5" />
+![](C:\Users\philwong\Documents\Analytics%20Training\R\TidyTuesday\Output\TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
