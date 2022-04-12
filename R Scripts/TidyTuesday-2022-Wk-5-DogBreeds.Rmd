@@ -1,0 +1,141 @@
+---
+title: "TidyTuesday - Dog Breeds!"
+author: "Philip Wong"
+date: '`r Sys.Date()`'
+output: github_document
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../Output") })
+---
+
+<strong> Week 5 - TidyTuesday Challenge: </strong> <br> The data this week comes from the ***American Kennel Club*** courtesy of KKakey - thanks! <br> Project Source: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2022/2022-02-01/readme.md> <br>
+
+<strong> Table of Contents: </strong> <br>
+
+1.  Importing packages & datasets
+2.  Data exploration (# of records, NA values, variable types)
+3.  Data cleaning & manipulation
+4.  Data visualizations that'll answer the following questions;
+    -   Based on the ranking's provided by AKC registration statistics - what do the top 5 breeds have in common?
+
+    -   Any particular correlation that help potential dog owners select their breeds?
+
+### [1] Import Packages & Datasets
+
+```{r, echo=TRUE, message=FALSE}
+library(tidyverse)
+library(scales)
+library(reshape2)
+library(ggcorrplot) # to build correlation heatmap
+library(knitr)
+
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
+                      message = FALSE, echo = TRUE, dpi = 180,
+                      fig.width = 8, out.height = 5)
+
+breed_traits <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_traits.csv')
+breed_rank_all <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-02-01/breed_rank.csv')
+```
+
+### [2] Data Exploration
+
+##### 2.1 - Managing duplicates
+
+Within the ***breeds_traits*** dataframe, can we verify if each record contains a distinct breed? Are there any duplicate breed records?
+
+```{r}
+n_row <- nrow(breed_traits) # number of records
+ndistinct_breeds <- n_distinct(breed_traits$Breed) # number of distinct breeds
+if (n_row == ndistinct_breeds) {"Dataframe contains distinct breeds"} else {"Dataframe contains duplicate breeds"}
+```
+
+##### 2.2 - Managing NULL values
+
+Are there any NA values worth investigating within our 3 dataframes?
+
+```{r}
+colSums(is.na(breed_traits)) # no NA values
+colSums(is.na(breed_rank_all)) # contains NA values
+```
+
+### [3] Data Cleaning & Manipulation
+
+##### 3.1 - Join dataframes
+
+Left join 'breed_rank_all' dataframe onto 'breed_traits' dataframe (primary table)
+
+```{r}
+# before joining - we need to remove any brackets as dplyr's left_join will not be able to detect brackets within a string
+breed_traits <- breed_traits %>% mutate(Breed = str_replace_all(Breed, "[//(//)]", "")) %>% mutate(Breed = str_squish(Breed))
+breed_rank_all <- breed_rank_all %>% mutate(Breed = str_replace_all(Breed, "[//(//)]", "")) %>% mutate(Breed = str_squish(Breed)) 
+
+# replace spaces with an underscore (Breed column)
+breed_traits$Breed <- str_replace_all(breed_traits$Breed, " ", "_")
+breed_rank_all$Breed <- str_replace_all(breed_rank_all$Breed, " ", "_")
+
+# left join by 'Breed' column
+joined_df <- breed_traits %>% left_join(breed_rank_all, by=c('Breed'))
+head(joined_df)
+```
+
+##### 3.2 - Drop columns & rows with NA values
+
+```{r}
+joined_df <- joined_df %>% select(-c(links, Image))
+joined_df <- joined_df %>% drop_na()
+head(joined_df)
+```
+
+##### 3.3 - Replace column header's spaces with underscore
+
+```{r}
+names(joined_df) <- str_replace_all(names(joined_df), " ", "_")
+```
+
+### [4] Data visualizations
+
+##### 4.1 - What do top 5 breeds have in common?
+
+```{r}
+melt_vector1 <- as.vector(c("Breed", "2013_Rank", "2014_Rank", "2015_Rank", "2016_Rank",
+                          "2017_Rank", "2018_Rank", "2019_Rank", "2020_Rank", "Coat_Type", "Coat_Length"))
+
+melt_df <- melt(joined_df, melt_vector1, variable.name = "Trait", value.name = "Trait_Score")
+melt_df <- melt(melt_df, 
+                c("Breed", "Coat_Type", "Coat_Length", "Trait", "Trait_Score"), 
+                variable.name = "Year", 
+                value.name = "Rank")
+
+# manipulate 'Year' column
+melt_df <- melt_df %>% 
+  mutate(Year = str_replace(Year, "_Rank", "")) %>% 
+  mutate(Year = as.numeric(Year))
+
+# build plot
+melt_df %>% 
+  filter(Rank <= 5) %>% 
+  filter(Trait_Score == 5) %>% 
+  group_by(Trait) %>%
+  summarise(Total_Trait_Score = sum(Trait_Score)) %>% 
+  ungroup() %>% 
+  ggplot(aes(x = reorder(Trait, Total_Trait_Score), y = Total_Trait_Score)) +
+  geom_bar(stat = 'identity', fill = 'royal blue') +
+  coord_flip() +
+  theme_bw() +
+  labs(x = "Breed Traits", y = "Total Score Across Top 5 Breeds")
+```
+
+##### 4.2 - Any particular correlation that help potential dog owners select their breeds?
+
+```{r}
+correlation_df <- joined_df %>% 
+  select_if(is.numeric) %>% 
+  select(!ends_with("_Rank"))
+
+corr <- round(cor(correlation_df),1)
+
+ggcorrplot(corr, 
+           outline.col = 'white', 
+           lab = TRUE,
+           ggtheme = ggplot2::theme_gray,
+           colors = c("red", "grey", "royal blue"))
+```
