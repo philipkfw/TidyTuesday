@@ -201,7 +201,7 @@ melt_df %>%
   labs(x = "Breed Traits", y = "Total Score Across Top 5 Breeds")
 ```
 
-![](C:\Users\philwong\Documents\Analytics%20Training\R\TidyTuesday\Output\TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-7-1.png?raw=true)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/67e5d03aebd6641c4077b4d0fda2d154971f0b0e/Output/TidyTuesday-2022-Wk-5-DogBreeds_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ##### 4.2 - Any particular correlation that help potential dog owners select their breeds?
 
