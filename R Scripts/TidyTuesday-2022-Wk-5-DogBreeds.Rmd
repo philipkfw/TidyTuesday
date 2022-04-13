@@ -2,7 +2,7 @@
 title: "TidyTuesday - Dog Breeds!"
 author: "Philip Wong"
 date: '`r Sys.Date()`'
-output: github_document
+output: rmarkdown::github_document
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../Output") })
 ---
