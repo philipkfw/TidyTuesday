@@ -157,7 +157,7 @@ chocolate_df %>%
   labs(y = 'Frequency', title = "Most coffee beans contain high rating's between 3-4%")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/49ee1e711a9b7d7ce962370b085330caa49237b4/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 ##### 4.2 - What’s the distribution of cocoa percentages?
 
 ``` r
@@ -169,7 +169,7 @@ chocolate_df %>%
   labs(y = 'Frequency', title = "Majority of cocoa percentages are within 70-80%")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/49ee1e711a9b7d7ce962370b085330caa49237b4/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 ##### 4.3 - Are coffee bean rating’s increasing each year?
 
 ``` r
@@ -182,7 +182,7 @@ chocolate_df %>%
   labs(title = "There is an increasing trend of coffee bean ratings!")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/49ee1e711a9b7d7ce962370b085330caa49237b4/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### 4.4 - Which countries of bean origin shows the highest average rating?
 
@@ -210,7 +210,7 @@ chocolate_df %>%
   labs(x = 'Coffee Bean - Origin Country', title = "Vietnam takes the lead based on average rating's")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/49ee1e711a9b7d7ce962370b085330caa49237b4/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 ##### 4.5 - Are there any significant correlations?
 
 ``` r
@@ -230,4 +230,4 @@ ggcorrplot(corr,
  title = "There are no significant correlations")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/49ee1e711a9b7d7ce962370b085330caa49237b4/Output/TidyTuesday-2022-Wk-3-ChocolateBarRatings_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
