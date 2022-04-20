@@ -1,2 +1,2 @@
 # TidyTuesday
-Keeping my data munging/visualization skills FRESH through weekly #TidyTuesday challenges!
+Keeping my data wrangling/visualization skills FRESH through weekly #TidyTuesday challenges!
