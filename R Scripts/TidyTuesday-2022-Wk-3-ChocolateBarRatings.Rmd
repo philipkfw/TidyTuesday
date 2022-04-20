@@ -36,7 +36,6 @@ library(scales)
 library(reshape2)
 library(ggcorrplot) # to build correlation heatmap
 library(knitr)
-library(plotly)
 
 knitr::opts_chunk$set(cache = TRUE, 
                       warning = FALSE,
