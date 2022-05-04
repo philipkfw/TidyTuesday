@@ -157,7 +157,7 @@ plot1 %>%
   ylab("number of returning users")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ##### 3.2 - Which days of the week results in the highest average user traffic (clicks & impressions)?
 
@@ -179,7 +179,7 @@ plot2 %>%
   scale_fill_manual(values = c("clicks" = theme_grey, "impressions" = alpha(theme_blue, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ##### 3.3 - What time of day results in the highest average user traffic, given same timezone?
 
@@ -201,7 +201,7 @@ plot3 %>%
                              alpha(theme_purple, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ##### 3.4 - Which banner drove the highest quantity of sales?
 
@@ -221,7 +221,7 @@ plot4 %>%
   ylab("total number of orders")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### 3.5 - For each banner, what’s the average timespan before users make their first purchase?
 
@@ -254,4 +254,4 @@ min_date %>%
                                 alpha(theme_grey, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
