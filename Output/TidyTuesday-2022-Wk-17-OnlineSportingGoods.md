@@ -129,11 +129,11 @@ head(product_df)
 Within our dataset, we have information about which banners appeared to
 the users, whether they clicked on it, as well as information about
 their user purchases. <br> - order_id - unique purchase number (NA for
-banner clicks and impressions) - user_id - unique identifier of the
-client - page_id - unique page number for event bundle (NA for
-purchases) - banner - 5 unique products/groups - device - mobile or
-desktop - time - time of the action - title - type of event (show, click
-or purchase) - target - target class
+banner clicks and impressions) <br> - user_id - unique identifier of the
+client <br> - page_id - unique page number for event bundle (NA for
+purchases) <br> - banner - 5 unique products/groups <br> - device - mobile or
+desktop <br> - time - time of the action <br> - title - type of event (show, click
+or purchase) <br> - target - target class
 
 ### \[3\] Perform data analysis
 
