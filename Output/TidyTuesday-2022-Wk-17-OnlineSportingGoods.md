@@ -20,15 +20,13 @@ a specific product or the entire company. We believe the experience with
 banners can vary by segment, and their effectiveness may depend on the
 characteristics of user behavior.” <br>
 
-***Problem:*** <br> Let’s use our analytical skills to drive decisions
-around sales/user growth! We’re looking to answer the following
-questions. <br> - Which banner contains the highest number of returning
-visitors?  
-- Which days of the week results in the highest average user traffic
-(clicks & impressions)? - What time of day results in the highest
-average user traffic, given same timezone? - Which banner drove the most
-sales? Which banner should we remove? - For each banner, what’s the
-average timespan before users make their first purchase?
+***Problem:*** <br> Let’s use our analytical skills to drive decisions around sales/user growth! We’re looking to answer the following questions. <br> 
+- Which banner contains the highest number of returning visitors?  <br>
+- Which days of the week results in the highest average user traffic (clicks & impressions)? <br> 
+- What time of day results in the highest average user traffic, given same timezone? <br> 
+- Which banner drove the most sales? <br> 
+- Which banner should we remove? <br>
+- For each banner, what’s the average timespan before users make their first purchase? <br>
 
 ### \[1\] Import Packages & Datasets
 
