@@ -25,7 +25,6 @@ characteristics of user behavior.” <br>
 - Which days of the week results in the highest average user traffic (clicks & impressions)? <br> 
 - What time of day results in the highest average user traffic, given same timezone? <br> 
 - Which banner drove the most sales? <br> 
-- Which banner should we remove? <br>
 - For each banner, what’s the average timespan before users make their first purchase? <br>
 
 ### \[1\] Import Packages & Datasets
