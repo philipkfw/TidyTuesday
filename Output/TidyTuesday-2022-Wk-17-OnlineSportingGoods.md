@@ -157,7 +157,7 @@ plot1 %>%
   ylab("number of returning users")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/bd9540cd2968e6aeab7e55413049d8590f6f02a6/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ##### 3.2 - Which days of the week results in the highest average user traffic (clicks & impressions)?
 
