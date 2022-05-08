@@ -1,7 +1,7 @@
 TidyTuesday-2022-Wk-17-OnlineSportingGoods
 ================
 Philip Wong
-2022-05-04
+2022-05-06
 
 <strong> Week 17 - TidyTuesday Challenge: </strong> <br> This week we
 will be analyzing a ***product-related*** dataset from Kaggle as opposed
@@ -20,12 +20,15 @@ a specific product or the entire company. We believe the experience with
 banners can vary by segment, and their effectiveness may depend on the
 characteristics of user behavior.” <br>
 
-***Problem:*** <br> Let’s use our analytical skills to drive decisions around sales/user growth! We’re looking to answer the following questions. <br> 
-- Which banner contains the highest number of returning visitors?  <br>
-- Which days of the week results in the highest average user traffic (clicks & impressions)? <br> 
-- What time of day results in the highest average user traffic, given same timezone? <br> 
-- Which banner drove the most sales? <br> 
-- For each banner, what’s the average timespan before users make their first purchase? <br>
+***Problem:*** <br> Let’s use our analytical skills to drive decisions
+around sales/user growth! We’re looking to answer the following
+questions. <br> - Which banner contains the highest number of returning
+visitors? <br> - Which days of the week results in the highest average
+user traffic (clicks & impressions)? <br> - What time of day results in
+the highest average user traffic, given same timezone? <br> - Which
+banner drove the most sales? Which banner should we remove? <br> - For
+each banner, what’s the average timespan before users make their first
+purchase? <br>
 
 ### \[1\] Import Packages & Datasets
 
@@ -44,8 +47,8 @@ knitr::opts_chunk$set(cache = TRUE,
                       warning = FALSE,
                       message = FALSE, 
                       echo = TRUE, 
-                      fig.width = 7, 
-                      fig.height = 6)
+                      fig.width = 13, 
+                      fig.height = 5)
 
 product <- read_csv("../Data/TTWK17_product.csv")
 
@@ -128,9 +131,9 @@ the users, whether they clicked on it, as well as information about
 their user purchases. <br> - order_id - unique purchase number (NA for
 banner clicks and impressions) <br> - user_id - unique identifier of the
 client <br> - page_id - unique page number for event bundle (NA for
-purchases) <br> - banner - 5 unique products/groups <br> - device - mobile or
-desktop <br> - time - time of the action <br> - title - type of event (show, click
-or purchase) <br> - target - target class
+purchases) <br> - banner - 5 unique products/groups <br> - device -
+mobile or desktop <br> - time - time of the action <br> - title - type
+of event (show, click or purchase) <br> - target - target class <br>
 
 ### \[3\] Perform data analysis
 
@@ -154,7 +157,7 @@ plot1 %>%
   ylab("number of returning users")
 ```
 
-![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ##### 3.2 - Which days of the week results in the highest average user traffic (clicks & impressions)?
 
@@ -176,7 +179,7 @@ plot2 %>%
   scale_fill_manual(values = c("clicks" = theme_grey, "impressions" = alpha(theme_blue, 0.9)))
 ```
 
-![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ##### 3.3 - What time of day results in the highest average user traffic, given same timezone?
 
@@ -193,12 +196,13 @@ plot3 %>%
   xlab("hour of day") +
   ylab("average user traffic") +
   facet_wrap(~event, scales = "free") +
+  theme(legend.position="none") +
   scale_fill_manual(values=c(alpha(theme_blue, 0.9),
                              theme_grey,
                              alpha(theme_purple, 0.9)))
 ```
 
-![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ##### 3.4 - Which banner drove the highest quantity of sales?
 
@@ -218,7 +222,7 @@ plot4 %>%
   ylab("total number of orders")
 ```
 
-![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### 3.5 - For each banner, what’s the average timespan before users make their first purchase?
 
@@ -245,10 +249,12 @@ min_date %>%
     ggplot(aes(x = banner, y = timespan, fill = device)) +
     geom_boxplot() +
     theme_bw() +
+    facet_wrap(~device) +
     labs(x = "banner", y = "number of days to make a purchase") +
-    theme(axis.text.x = element_text(angle = 90)) +
+    theme(axis.text.x = element_text(angle = 90),
+          legend.position="none") +
     scale_fill_manual(values=c(alpha(theme_blue, 0.9),
                                 alpha(theme_grey, 0.9)))
 ```
 
-![](https://github.com/philipkfw/TidyTuesday/blob/5ac7ccf2fd8956fca2b06481662b89f07356ce00/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
