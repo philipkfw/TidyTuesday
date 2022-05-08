@@ -18,7 +18,7 @@ order to stimulate their sales. Each user will be able to see one of 5
 banners, randomly selected and displayed. Each banner either advertises
 a specific product or the entire company. We believe the experience with
 banners can vary by segment, and their effectiveness may depend on the
-characteristics of user behavior.” <br>
+characteristics of user behavior. <br>
 
 ***Problem:*** <br> Let’s use our analytical skills to drive decisions
 around sales/user growth! We’re looking to answer the following
