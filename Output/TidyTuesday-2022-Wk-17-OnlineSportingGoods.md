@@ -179,7 +179,7 @@ plot2 %>%
   scale_fill_manual(values = c("clicks" = theme_grey, "impressions" = alpha(theme_blue, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/7a6162f07c5e45d7386a0c3e88c368d6a8138b61/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ##### 3.3 - What time of day results in the highest average user traffic, given same timezone?
 
@@ -202,7 +202,7 @@ plot3 %>%
                              alpha(theme_purple, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/7a6162f07c5e45d7386a0c3e88c368d6a8138b61/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ##### 3.4 - Which banner drove the highest quantity of sales?
 
@@ -222,7 +222,7 @@ plot4 %>%
   ylab("total number of orders")
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/7a6162f07c5e45d7386a0c3e88c368d6a8138b61/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ##### 3.5 - For each banner, what’s the average timespan before users make their first purchase?
 
@@ -257,4 +257,4 @@ min_date %>%
                                 alpha(theme_grey, 0.9)))
 ```
 
-![](/Users/philipwong/Documents/Analytics%20Projects/TidyTuesday/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](https://github.com/philipkfw/TidyTuesday/blob/7a6162f07c5e45d7386a0c3e88c368d6a8138b61/Output/TidyTuesday-2022-Wk-17-OnlineSportingGoods_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
